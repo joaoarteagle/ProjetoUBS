@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 @Entity
 public class Medicamentos {
     @Id
-    private Long id;
+    private Long idMedicamento;
     private String nomeMedicamento;
     private String descricao;
 }

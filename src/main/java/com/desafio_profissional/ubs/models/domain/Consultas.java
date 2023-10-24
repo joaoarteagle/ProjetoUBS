@@ -14,6 +14,8 @@ public class Consultas {
 
     @ManyToOne
     private Medico medico;
+    @ManyToOne
+    private Paciente paciente;
     public Consultas(LocalDateTime agendaConsulta, String localEndereco) {
         this.agendaConsulta = agendaConsulta;
         LocalEndereco = localEndereco;
