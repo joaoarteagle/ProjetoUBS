@@ -34,7 +34,7 @@ public class Pessoa extends RepresentationModel<Pessoa> implements Serializable 
     private String email;
 
     public Pessoa() {
-        this.cpf = this.cpf;
+        this.cpf = cpf;
         this.nomeCompleto = nomeCompleto;
         this.dataNasc = dataNasc;
         this.registroGeral = registroGeral;
