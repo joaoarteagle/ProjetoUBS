@@ -15,6 +15,7 @@ public class Medico extends Pessoa{
     private List<Consultas> consultasList;
 
 
-
-
+    public Medico() {
+        super();
+    }
 }

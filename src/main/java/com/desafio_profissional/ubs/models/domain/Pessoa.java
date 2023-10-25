@@ -5,18 +5,20 @@ import com.desafio_profissional.ubs.enums.Estados;
 import com.desafio_profissional.ubs.enums.Nascionalidade;
 import com.desafio_profissional.ubs.enums.Sexo;
 import jakarta.persistence.*;
+import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "TB_PESSOA")
 public class Pessoa extends RepresentationModel<Pessoa> implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
+    @CPF
     @Id
     private Long cpf;
     private String nomeCompleto;
@@ -32,7 +34,7 @@ public class Pessoa extends RepresentationModel<Pessoa> implements Serializable 
     private String email;
 
     public Pessoa() {
-        this.cpf = cpf;
+        this.cpf = this.cpf;
         this.nomeCompleto = nomeCompleto;
         this.dataNasc = dataNasc;
         this.registroGeral = registroGeral;
