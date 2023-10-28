@@ -10,6 +10,7 @@ import java.util.List;
 @Table(name = "TB_MEDICO")
 @Entity
 public class Medico extends Pessoa{
+
     private Long crm;
     @OneToMany(mappedBy = "medico")
     private List<Consultas> consultasList;
