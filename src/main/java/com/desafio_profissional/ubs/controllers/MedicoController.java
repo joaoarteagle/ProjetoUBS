@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/medicos")
@@ -45,9 +46,11 @@ public class MedicoController {
         return ResponseEntity.status(HttpStatus.OK).body(medicoRepository.findByCrm(crm));
     }
 //    @PutMapping("/{crm}")
-//    public ResponseEntity<Medico> update(@PathVariable Long crm){
-//
-//        return ResponseEntity.status(HttpStatus.OK).body(medicoRepository.)
+//    public ResponseEntity<Medico> update(@PathVariable Long crm,
+//                                         @RequestBody Medico medico){
+//       Optional<Medico> medico1 = medicoRepository.findByCrm(crm);
+//        var alterMedico = medico1.get();
+//        return ResponseEntity.status(HttpStatus.OK).body(medicoRepository.save(alterMedico));
 //    }
 
     @GetMapping("/consultas/{crm}")
