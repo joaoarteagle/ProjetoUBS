@@ -7,6 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ConsultaRepository extends JpaRepository<Consultas, Long> {
 
-    public  Consultas findByMedico_Crm(Long crm);
-    public  Consultas findAllByMedico_Crm(Long crm);
+    Consultas findByMedico_Crm(Long crm);
+    Consultas findAllByMedico_Crm(Long crm);
 }
