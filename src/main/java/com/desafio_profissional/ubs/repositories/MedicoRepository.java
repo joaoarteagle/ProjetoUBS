@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface MedicoRepository extends JpaRepository<Medico, Long> {
      Medico findByCrm(Long crm);
+     Medico deleteByCrm(Long crm);
 }
