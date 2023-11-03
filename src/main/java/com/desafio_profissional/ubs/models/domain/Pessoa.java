@@ -1,9 +1,9 @@
 package com.desafio_profissional.ubs.models.domain;
 
-import com.desafio_profissional.ubs.enums.EstadoCivil;
-import com.desafio_profissional.ubs.enums.Estados;
-import com.desafio_profissional.ubs.enums.Nascionalidade;
-import com.desafio_profissional.ubs.enums.Sexo;
+import com.desafio_profissional.ubs.models.domain.enums.EstadoCivil;
+import com.desafio_profissional.ubs.models.domain.enums.Estados;
+import com.desafio_profissional.ubs.models.domain.enums.Nascionalidade;
+import com.desafio_profissional.ubs.models.domain.enums.Sexo;
 import jakarta.persistence.*;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.hateoas.RepresentationModel;

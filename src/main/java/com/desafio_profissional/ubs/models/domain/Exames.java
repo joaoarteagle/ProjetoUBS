@@ -1,6 +1,6 @@
 package com.desafio_profissional.ubs.models.domain;
 
-import com.desafio_profissional.ubs.enums.ExameEnum;
+import com.desafio_profissional.ubs.models.domain.enums.ExameEnum;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;

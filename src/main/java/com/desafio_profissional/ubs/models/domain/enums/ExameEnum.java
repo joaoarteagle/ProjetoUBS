@@ -1,4 +1,4 @@
-package com.desafio_profissional.ubs.enums;
+package com.desafio_profissional.ubs.models.domain.enums;
 
 public enum ExameEnum {
     EXAMES_DE_SANGUE,
@@ -20,5 +20,9 @@ public enum ExameEnum {
     EXAMES_DE_LABORATORIO_PARA_DIAGNOSTICO_DE_CANCER,
     EXAMES_DE_URINA_E_FEZES,
     EXAMES_DE_CITOLOGIA_CERVICAL,
-    EXAMES_PARA_CONTROLE_DE_DOENCAS_CRONICAS
+    EXAMES_PARA_CONTROLE_DE_DOENCAS_CRONICAS;
+
+    ExameEnum() {
+    }
+
 }
