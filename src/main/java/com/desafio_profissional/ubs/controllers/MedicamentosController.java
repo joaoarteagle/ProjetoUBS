@@ -20,9 +20,9 @@ public class MedicamentosController {
     @Autowired
     MedicamentosRepository medicamentosRepository;
     @PostMapping
-    public ResponseEntity<Medicamentos> postMedicamento(@RequestBody @Valid MedicamentoDto medicamento){
-        var medicamento0 = new Medicamentos();
-        BeanUtils.copyProperties(medicamento, medicamento0);
+    public ResponseEntity<Object> postMedicamento(@RequestBody @Valid MedicamentoDto medicamento){
+        Medicamentos medicamento0 = new Medicamentos();
+       BeanUtils.copyProperties(medicamento,medicamento0);
         return ResponseEntity.status(HttpStatus.OK).body(medicamentosRepository.save(medicamento0));
     }
     @GetMapping
@@ -36,4 +36,20 @@ public class MedicamentosController {
         return ResponseEntity.status(HttpStatus.OK).body(medicamento.get());
 
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Medicamentos> updateMedicamento(@PathVariable Long id, @RequestBody MedicamentoDto dto){
+        Optional<Medicamentos> medicamento = medicamentosRepository.findById(id);
+        Medicamentos medicamento0 = medicamento.get();
+        BeanUtils.copyProperties(dto, medicamento0);
+
+        return ResponseEntity.status(HttpStatus.OK).body(medicamentosRepository.save(medicamento0));
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Medicamentos> deleteMedicamento(@PathVariable Long id){
+        medicamentosRepository.deleteById(id);
+
+        return (ResponseEntity<Medicamentos>) ResponseEntity.ok();
+    }
+
 }

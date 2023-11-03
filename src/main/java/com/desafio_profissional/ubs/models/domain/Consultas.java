@@ -24,4 +24,44 @@ public class Consultas {
     public Consultas() {
 
     }
+
+    public Long getIdConsulta() {
+        return idConsulta;
+    }
+
+    public void setIdConsulta(Long idConsulta) {
+        this.idConsulta = idConsulta;
+    }
+
+    public LocalDateTime getAgendaConsulta() {
+        return agendaConsulta;
+    }
+
+    public void setAgendaConsulta(LocalDateTime agendaConsulta) {
+        this.agendaConsulta = agendaConsulta;
+    }
+
+    public String getLocalEndereco() {
+        return LocalEndereco;
+    }
+
+    public void setLocalEndereco(String localEndereco) {
+        LocalEndereco = localEndereco;
+    }
+
+    public Medico getMedico() {
+        return medico;
+    }
+
+    public void setMedico(Medico medico) {
+        this.medico = medico;
+    }
+
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public void setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+    }
 }
