@@ -8,7 +8,7 @@ import java.util.List;
 @Entity
 public class Medicamentos {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long idMedicamento;
     private String nomeMedicamento;
     private String descricao;
@@ -17,12 +17,24 @@ public class Medicamentos {
     private List<Receita> receitas;
 
 
-    public Medicamentos(String nomeMedicamento, String descricao) {
+    public Medicamentos(Long idMedicamento, String nomeMedicamento, String descricao) {
+        this.idMedicamento = idMedicamento;
         this.nomeMedicamento = nomeMedicamento;
         this.descricao = descricao;
     }
+
     public Medicamentos(){
 
+    }
+
+
+
+    public Long getIdMedicamento() {
+        return idMedicamento;
+    }
+
+    public void setIdMedicamento(Long idMedicamento) {
+        this.idMedicamento = idMedicamento;
     }
 
     public List<Receita> getReceitas() {

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicamentos</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body class="bodyGeral">
+    <header class="top">
+        <img src="../static/img/logo_ubs-01_1422989821-removebg-preview.png" alt="logoUBS" class="ubs">
+        <a href="notification.html"><img src="../static/img/notificação.png" alt="notifications" class="icon"></a>
+        <a href=""><img src="../static/img/userAccount.png" alt="acount" class="icon"></a>
+        <h2 class="menuPrincipal"> <img src="../static/img/medicamento_318-579300.png" alt="">Medicamentos</h2>
+    </header>
+
+    <div>
+        <fieldset>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrição</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr data-th-each="medicamento : ${medicamentos}">
+                    <td data-th-text="${medicamento.idMedicamento}"></td>
+                    <td data-th-text="${medicamento.nomeMedicamento}"></td>
+                    <td data-th-text="${medicamento.descricao}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
+
+</body>
+</html>

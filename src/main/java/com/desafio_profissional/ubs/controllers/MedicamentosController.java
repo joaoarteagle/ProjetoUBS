@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 import java.util.Optional;
@@ -26,9 +27,11 @@ public class MedicamentosController {
         return ResponseEntity.status(HttpStatus.OK).body(medicamentosRepository.save(medicamento0));
     }
     @GetMapping
-    public ResponseEntity<List<Medicamentos>> getAllMedicamentos(){
+    public ModelAndView getAllMedicamentos(){
         List<Medicamentos> medicamentosList = medicamentosRepository.findAll();
-        return ResponseEntity.status(HttpStatus.OK).body(medicamentosList);
+        ModelAndView view = new ModelAndView("medicamento");
+        view.addObject("medicamentos",medicamentosList);
+        return view;
     }
     @GetMapping("/{id}")
     public ResponseEntity<Medicamentos> getOneMedicamento(@PathVariable Long id){
@@ -46,10 +49,10 @@ public class MedicamentosController {
         return ResponseEntity.status(HttpStatus.OK).body(medicamentosRepository.save(medicamento0));
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<Medicamentos> deleteMedicamento(@PathVariable Long id){
+    public ResponseEntity<Object> deleteMedicamento(@PathVariable Long id){
         medicamentosRepository.deleteById(id);
 
-        return (ResponseEntity<Medicamentos>) ResponseEntity.ok();
+        return ResponseEntity.status(HttpStatus.OK).body("deletado com sucesso");
     }
 
 }

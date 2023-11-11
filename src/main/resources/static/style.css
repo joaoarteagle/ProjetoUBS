@@ -1,0 +1,107 @@
+@import "headerstyle.css";
+@import "menustyle.css";
+@import "agendastyle.css";
+*{
+    margin: 5px;
+}
+body{
+    font-family: Magra;
+}
+#botao{
+    margin-top: 8vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.inputIndex{
+    background-color: #176997;
+    color: white;
+    font-family: Magra;
+    font-size: 14px;
+    border: none;
+
+}
+.inputIndex::placeholder{
+    color: white;
+}
+#botao button{
+ 
+    width: 25vh;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 26px;
+    border: none;
+    background-color: #19d3c7;
+    color: white;
+    box-shadow: 0px 4px 4px 0px #00000040
+}
+
+p{
+    margin-left: 10vh;
+}
+#inputs{
+   padding: 5px;
+
+   
+}
+#inputs input{
+    width: 250px;
+    height: 40px;
+    border-radius: 25px;
+    border: 1px solid;
+    font-size: 16px;
+}
+#ubsLogo{
+    
+    margin: 0;
+    padding: 0;
+    width: 50vh;
+    height: 20vh;
+   object-fit: cover;
+
+}
+#userTable #user{
+    margin: 5vh;
+    margin-left: 15vh;
+    width: 15vh;
+}
+a:active{
+    color: black;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15vh;
+    padding: 13px;
+    border-radius: 15px;
+    border: none;
+    margin: 5px;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(255, 0, 34);
+    box-shadow: 0px 4px 4px 0px #00000040 inset;
+
+
+    
+}
+.bodyGeral{
+    background-image: url("img/hospital-desfoque.png");
+}
+
+html{
+    box-shadow: 0px 4px 4px 0px #00000040 inset;
+}
+#loginBody{
+    background-color: #c9e6f6;
+   
+
+}
+.menuPrincipal{
+    margin: 0;
+    margin-top: 5px;
+    font-family: Magra;
+    font-size: 16px;
+}

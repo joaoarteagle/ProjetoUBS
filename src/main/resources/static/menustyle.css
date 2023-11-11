@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Magra&display=swap');
+
+#menu , .boxItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+
+}
+#menu{
+padding-top: 10px;
+margin-top: 5vh;
+background-color: rgba(255, 255, 255, 0.422);
+flex-shrink: 0;
+
+}
+
+.itemMenu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+    padding: 10px ;
+    width: 40vh;
+    height: 25px;
+    background-color: rgba(128, 128, 128, 0.438);
+    border-radius: 3vh;
+    text-decoration: none;
+    color: white;
+    font-family: Magra;
+
+}
+div{
+    margin: 0px;
+}
+
