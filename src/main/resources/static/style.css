@@ -95,6 +95,10 @@ html{
     box-shadow: 0px 4px 4px 0px #00000040 inset;
 }
 #loginBody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     background-color: #c9e6f6;
    
 
