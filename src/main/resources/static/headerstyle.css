@@ -1,11 +1,16 @@
 fieldset{
     margin-top: 5vh;
     min-height: 70vh;
+    max-height: 80vh;
     border-radius: 3vh;
     background-color: rgba(255, 255, 255, 0.5);
     border: none;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    overflow: auto; /* ou scroll */
+    scrollbar-width: thin; /* ou thick para uma barra de rolagem mais larga */
+    scrollbar-color: darkgray lightgray; /* cor da barra de rolagem e cor do fundo */
 }
+
 .icon, .ubs, img{
     object-fit: cover;
     width: 5vh;

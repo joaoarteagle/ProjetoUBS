@@ -1,0 +1,166 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > Medico</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.desafio_profissional.ubs.models.domain</a>
+</div>
+
+<h1>Coverage Summary for Class: Medico (com.desafio_profissional.ubs.models.domain)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Medico</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Medico$HibernateInstantiator$QT7Q5JUU</td>
+  </tr>
+  <tr>
+    <td class="name">Medico$HibernateInstantiator$zteYpHr7</td>
+  </tr>
+  <tr>
+    <td class="name">Medico$HibernateProxy$KgQODJI2</td>
+  </tr>
+  <tr>
+    <td class="name">Medico$HibernateProxy$ts6xHcyk</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/8)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.desafio_profissional.ubs.models.domain;
+&nbsp;
+&nbsp;import jakarta.persistence.Entity;
+&nbsp;import jakarta.persistence.Id;
+&nbsp;import jakarta.persistence.OneToMany;
+&nbsp;import jakarta.persistence.Table;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@Table(name = &quot;TB_MEDICO&quot;)
+&nbsp;@Entity
+&nbsp;public class Medico extends Pessoa{
+&nbsp;
+&nbsp;    private Long crm;
+&nbsp;    @OneToMany(mappedBy = &quot;medico&quot;)
+&nbsp;    private List&lt;Consultas&gt; consultasList;
+&nbsp;
+&nbsp;
+&nbsp;    public Medico() {
+<b class="nc">&nbsp;        super();</b>
+&nbsp;    }
+&nbsp;
+<b class="nc">&nbsp;    public Medico(Long crm, List&lt;Consultas&gt; consultasList) {</b>
+<b class="nc">&nbsp;        this.crm = crm;</b>
+<b class="nc">&nbsp;        this.consultasList = consultasList;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Long getCrm() {
+<b class="nc">&nbsp;        return crm;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setCrm(Long crm) {
+<b class="nc">&nbsp;        this.crm = crm;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Consultas&gt; getConsultasList() {
+<b class="nc">&nbsp;        return consultasList;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setConsultasList(List&lt;Consultas&gt; consultasList) {
+<b class="nc">&nbsp;        this.consultasList = consultasList;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-11-16 16:21</div>
+</div>
+</body>
+</html>

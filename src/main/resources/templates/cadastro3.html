@@ -12,13 +12,13 @@
         <fieldset>
             <div><h2>Cadastrando Usuário</h2></div>
             <h3>Informações Pessoais</h3>
-                <form class="formulariocadastro">
+                <form class="formulariocadastro" method="post">
                     <select name="convenio" id="">
                         <option value="" selected disabled>Convenio</option>
                     </select>
                     <input type="tel" name="contact" placeholder="Contato de Emergência" id="contatoEmergencia">
                     <div class="buttons">
-                        <a href="cadastro2.html">VOLTAR</a>
+                        <a th:href="@{/pacientes/cadastro2}">VOLTAR</a>
                         <button onclick="">CADASTAR</button>
                     </div>
                 </form>

@@ -1,22 +1,28 @@
 package com.desafio_profissional.ubs.models.domain;
 
 import com.desafio_profissional.ubs.models.domain.enums.ExameEnum;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.Date;
+
 @Table(name = "TB_EXAMES")
 @Entity
 public class Exames {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long idExame;
     private LocalDateTime agendaExame;
     private String enderecoLocal;
     private ExameEnum exame;
     @ManyToOne
+    @JoinColumn(name = "cpf_paciente")
     private Paciente paciente;
+
+
+
 
 
     public Exames(Long idExame, LocalDateTime agendaExame, String enderecoLocal, ExameEnum exame, Paciente paciente) {
@@ -29,6 +35,7 @@ public class Exames {
 
     public Exames() {
     }
+
 
     public Long getIdExame() {
         return idExame;

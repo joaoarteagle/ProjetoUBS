@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MedicamentosController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ProjetoDesafioProfissionalIvApplicationTests Coverage Results</a> &gt; <a href="index.source.html" class="el_package">com.desafio_profissional.ubs.controllers</a> &gt; <span class="el_source">MedicamentosController.java</span></div><h1>MedicamentosController.java</h1><pre class="source lang-java linenums">package com.desafio_profissional.ubs.controllers;
+
+import com.desafio_profissional.ubs.dtos.MedicamentoDto;
+import com.desafio_profissional.ubs.models.domain.Medicamentos;
+import com.desafio_profissional.ubs.repositories.MedicamentosRepository;
+import jakarta.validation.Valid;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping(&quot;/medicamentos&quot;)
+<span class="fc" id="L19">public class MedicamentosController {</span>
+
+    @Autowired
+    MedicamentosRepository medicamentosRepository;
+    @PostMapping
+    public ResponseEntity&lt;Object&gt; postMedicamento(@RequestBody @Valid MedicamentoDto medicamento){
+<span class="nc" id="L25">        Medicamentos medicamento0 = new Medicamentos();</span>
+<span class="nc" id="L26">       BeanUtils.copyProperties(medicamento,medicamento0);</span>
+<span class="nc" id="L27">        return ResponseEntity.status(HttpStatus.OK).body(medicamentosRepository.save(medicamento0));</span>
+    }
+    @GetMapping
+    public ModelAndView getAllMedicamentos(){
+<span class="nc" id="L31">        List&lt;Medicamentos&gt; medicamentosList = medicamentosRepository.findAll();</span>
+<span class="nc" id="L32">        ModelAndView view = new ModelAndView(&quot;medicamento&quot;);</span>
+<span class="nc" id="L33">        view.addObject(&quot;medicamentos&quot;,medicamentosList);</span>
+<span class="nc" id="L34">        return view;</span>
+    }
+    @GetMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;Medicamentos&gt; getOneMedicamento(@PathVariable Long id){
+<span class="nc" id="L38">        Optional&lt;Medicamentos&gt; medicamento = medicamentosRepository.findById(id);</span>
+<span class="nc" id="L39">        return ResponseEntity.status(HttpStatus.OK).body(medicamento.get());</span>
+
+    }
+
+    @PutMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;Medicamentos&gt; updateMedicamento(@PathVariable Long id, @RequestBody MedicamentoDto dto){
+<span class="nc" id="L45">        Optional&lt;Medicamentos&gt; medicamento = medicamentosRepository.findById(id);</span>
+<span class="nc" id="L46">        Medicamentos medicamento0 = medicamento.get();</span>
+<span class="nc" id="L47">        BeanUtils.copyProperties(dto, medicamento0);</span>
+
+<span class="nc" id="L49">        return ResponseEntity.status(HttpStatus.OK).body(medicamentosRepository.save(medicamento0));</span>
+    }
+    @DeleteMapping(&quot;/{id}&quot;)
+    public ResponseEntity&lt;Object&gt; deleteMedicamento(@PathVariable Long id){
+<span class="nc" id="L53">        medicamentosRepository.deleteById(id);</span>
+
+<span class="nc" id="L55">        return ResponseEntity.status(HttpStatus.OK).body(&quot;deletado com sucesso&quot;);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

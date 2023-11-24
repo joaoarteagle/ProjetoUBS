@@ -61,10 +61,13 @@ p{
    object-fit: cover;
 
 }
-#userTable #user{
-    margin: 5vh;
-    margin-left: 15vh;
+#user{
     width: 15vh;
+}
+#userTable{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 a:active{
     color: black;

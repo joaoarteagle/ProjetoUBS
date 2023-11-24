@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Medico.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ProjetoDesafioProfissionalIvApplicationTests Coverage Results</a> &gt; <a href="index.source.html" class="el_package">com.desafio_profissional.ubs.models.domain</a> &gt; <span class="el_source">Medico.java</span></div><h1>Medico.java</h1><pre class="source lang-java linenums">package com.desafio_profissional.ubs.models.domain;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+import java.util.List;
+
+@Table(name = &quot;TB_MEDICO&quot;)
+@Entity
+public class Medico extends Pessoa{
+
+    private Long crm;
+    @OneToMany(mappedBy = &quot;medico&quot;)
+    private List&lt;Consultas&gt; consultasList;
+
+
+    public Medico() {
+<span class="nc" id="L20">        super();</span>
+<span class="nc" id="L21">    }</span>
+
+<span class="nc" id="L23">    public Medico(Long crm, List&lt;Consultas&gt; consultasList) {</span>
+<span class="nc" id="L24">        this.crm = crm;</span>
+<span class="nc" id="L25">        this.consultasList = consultasList;</span>
+<span class="nc" id="L26">    }</span>
+
+    public Long getCrm() {
+<span class="nc" id="L29">        return crm;</span>
+    }
+
+    public void setCrm(Long crm) {
+<span class="nc" id="L33">        this.crm = crm;</span>
+<span class="nc" id="L34">    }</span>
+
+    public List&lt;Consultas&gt; getConsultasList() {
+<span class="nc" id="L37">        return consultasList;</span>
+    }
+
+    public void setConsultasList(List&lt;Consultas&gt; consultasList) {
+<span class="nc" id="L41">        this.consultasList = consultasList;</span>
+<span class="nc" id="L42">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

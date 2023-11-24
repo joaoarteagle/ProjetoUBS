@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.Collections;
 import java.util.List;
@@ -58,5 +59,10 @@ public class ConsultaController {
         return ResponseEntity.status(HttpStatus.OK).body("Consulta deletada com sucesso");
     }
 
+    @GetMapping("/agendaOption")
+    public ModelAndView agendarConsulta(){
+        ModelAndView view = new ModelAndView("agendaOption");
+        return view;
+    }
 
 }

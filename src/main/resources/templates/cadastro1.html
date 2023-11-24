@@ -1,5 +1,5 @@
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="en"  xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
     <body class="bodycadastro">
 
             
-      <!-- ----------------------------ETAPA 01 CADASTRO---------------------------------------------->  
+
         <div class="form-step step-1 active">
             <img src="../static/img/logo_ubs-01_1422989821-removebg-preview.png" alt="logoUBS" class="ubs">
         
@@ -20,7 +20,7 @@
                     <h2>Cadastrando Usuário</h2>
                 </div>
                 <h3>Informações Pessoais</h3>
-                <form class="formulariocadastro">
+                <form class="formulariocadastro" method="post" >
                 
                     <input type="text" name="name" placeholder="Nome Completo">
                     <input type="date" name="dataNasc" id="" placeholder="Data de Nascimento">
@@ -37,8 +37,8 @@
                     <input type="tel" name="fone" placeholder="Telefone">
 
                     <div class="buttons">
-                       <a href="index.html">CANCELAR</a>
-                       <a href="cadastro2.html">PRÓXIMO</a>
+                       <a th:href="@{/pacientes/login}">CANCELAR</a>
+                       <a th:href="@{/pacientes/cadastro2}">PRÓXIMO</a>
                     </div>
                 </form>
             </fieldset>

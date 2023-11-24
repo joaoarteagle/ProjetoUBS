@@ -1,0 +1,192 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > Receita</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.desafio_profissional.ubs.models.domain</a>
+</div>
+
+<h1>Coverage Summary for Class: Receita (com.desafio_profissional.ubs.models.domain)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Receita</td>
+<td class="coverageStat">
+  <span class="percent">
+    10%
+  </span>
+  <span class="absValue">
+    (1/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    7.1%
+  </span>
+  <span class="absValue">
+    (1/14)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Receita$HibernateInstantiator$1iK83eSM</td>
+  </tr>
+  <tr>
+    <td class="name">Receita$HibernateInstantiator$NUAY1GDG</td>
+  </tr>
+  <tr>
+    <td class="name">Receita$HibernateProxy$RxkWorXX</td>
+  </tr>
+  <tr>
+    <td class="name">Receita$HibernateProxy$tIYFxH5I</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    10%
+  </span>
+  <span class="absValue">
+    (1/10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    7.1%
+  </span>
+  <span class="absValue">
+    (1/14)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.desafio_profissional.ubs.models.domain;
+&nbsp;
+&nbsp;import jakarta.persistence.*;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;
+&nbsp;@Entity
+&nbsp;@Table(name = &quot;TB_RECEITAS&quot;)
+&nbsp;public class Receita {
+&nbsp;    @Id
+&nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
+&nbsp;    private Long idReceita;
+&nbsp;
+&nbsp;    @ManyToOne
+&nbsp;    @JoinColumn(name = &quot;paciente_cpf&quot;)
+&nbsp;    private Paciente paciente;
+&nbsp;
+&nbsp;    @ManyToOne
+&nbsp;    @JoinColumn(name = &quot;medico_crm&quot;)
+&nbsp;    private Medico medico;
+&nbsp;
+&nbsp;    @ManyToMany
+&nbsp;    @JoinTable(name = &quot;receita_medicamento&quot;,
+&nbsp;    joinColumns = @JoinColumn(name = &quot;Receita_id&quot;),
+&nbsp;    inverseJoinColumns = @JoinColumn(name = &quot;medicamento_id&quot;))
+&nbsp;    private List&lt;Medicamentos&gt; medicamentos;
+&nbsp;
+<b class="nc">&nbsp;    public Receita(Long idReceita, Paciente paciente, Medico medico, List&lt;Medicamentos&gt; medicamentos) {</b>
+<b class="nc">&nbsp;        this.idReceita = idReceita;</b>
+<b class="nc">&nbsp;        this.paciente = paciente;</b>
+<b class="nc">&nbsp;        this.medico = medico;</b>
+<b class="nc">&nbsp;        this.medicamentos = medicamentos;</b>
+&nbsp;    }
+&nbsp;
+<b class="fc">&nbsp;    public Receita() {</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Long getIdReceita() {
+<b class="nc">&nbsp;        return idReceita;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setIdReceita(Long idReceita) {
+<b class="nc">&nbsp;        this.idReceita = idReceita;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Paciente getPaciente() {
+<b class="nc">&nbsp;        return paciente;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setPaciente(Paciente paciente) {
+<b class="nc">&nbsp;        this.paciente = paciente;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Medico getMedico() {
+<b class="nc">&nbsp;        return medico;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setMedico(Medico medico) {
+<b class="nc">&nbsp;        this.medico = medico;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public List&lt;Medicamentos&gt; getMedicamentos() {
+<b class="nc">&nbsp;        return medicamentos;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setMedicamentos(List&lt;Medicamentos&gt; medicamentos) {
+<b class="nc">&nbsp;        this.medicamentos = medicamentos;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-11-16 16:21</div>
+</div>
+</body>
+</html>

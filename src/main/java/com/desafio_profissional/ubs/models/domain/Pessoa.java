@@ -18,7 +18,7 @@ public class Pessoa extends RepresentationModel<Pessoa> implements Serializable 
     @Serial
     private static final long serialVersionUID = 1L;
 
-    @CPF
+
     @Id
     private Long cpf;
     private String nomeCompleto;

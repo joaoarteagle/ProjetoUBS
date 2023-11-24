@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ExameEnum.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ProjetoDesafioProfissionalIvApplicationTests Coverage Results</a> &gt; <a href="index.source.html" class="el_package">com.desafio_profissional.ubs.models.domain.enums</a> &gt; <span class="el_source">ExameEnum.java</span></div><h1>ExameEnum.java</h1><pre class="source lang-java linenums">package com.desafio_profissional.ubs.models.domain.enums;
+
+<span class="fc" id="L3">public enum ExameEnum {</span>
+<span class="fc" id="L4">    EXAMES_DE_SANGUE(&quot;Exame de Sangue&quot;),</span>
+<span class="fc" id="L5">    EXAMES_DE_IMAGEM(&quot;Exame de Imagem&quot;),</span>
+<span class="fc" id="L6">    TOMOGRAFIA_COMPUTADORIZADA(&quot;Tomografia&quot;),</span>
+<span class="fc" id="L7">    RESSONANCIA_MAGNETICA(&quot;Ressonancia Magnetica&quot;),</span>
+<span class="fc" id="L8">    MAMOGRAFIA(&quot;Mamografia&quot;),</span>
+<span class="fc" id="L9">    COLONOSCOPIA(&quot;Colonoscopia&quot;),</span>
+<span class="fc" id="L10">    ENDOSCOPIA(&quot;Endoscopia&quot;),</span>
+<span class="fc" id="L11">    ELETROCARDIOGRAMA(&quot;Eletrocardiograma&quot;),</span>
+<span class="fc" id="L12">    ECOCARDIOGRAMA(&quot;Ecocardiograma&quot;),</span>
+<span class="fc" id="L13">    TESTES_DE_FUNCAO_PULMONAR(&quot;Teste de Função Pulmonar&quot;),</span>
+<span class="fc" id="L14">    EXAMES_DE_AUDIOMETRIA(&quot;Exame de Audiometria&quot;),</span>
+<span class="fc" id="L15">    EXAMES_DE_OFTALMOLOGIA(&quot;Exame de Oftalmologia&quot;),</span>
+<span class="fc" id="L16">    EXAMES_DE_DENSITOMETRIA_OSSEA(&quot;Exame de Densitometria Ossea&quot;),</span>
+<span class="fc" id="L17">    TESTES_DE_HIV(&quot;Teste de HIV&quot;),</span>
+<span class="fc" id="L18">    EXAMES_PARA_DIAGNOSTICO_DE_DSTS(&quot;Diagnostico de DSTs&quot;),</span>
+<span class="fc" id="L19">    EXAMES_PARA_DIAGNOSTICO_DE_HEPATITES(&quot;Diagnostico de Hepatite&quot;),</span>
+<span class="fc" id="L20">    EXAMES_DE_LABORATORIO_PARA_DIAGNOSTICO_DE_CANCER(&quot;Diagnostico de Câncer&quot;),</span>
+<span class="fc" id="L21">    EXAMES_DE_URINA_E_FEZES(&quot;Exame de Urina e Fezes&quot;),</span>
+<span class="fc" id="L22">    EXAMES_DE_CITOLOGIA_CERVICAL(&quot;Citologia Cervical&quot;),</span>
+<span class="fc" id="L23">    EXAMES_PARA_CONTROLE_DE_DOENCAS_CRONICAS(&quot;Controle de Doenças Crônicas&quot;);</span>
+
+<span class="fc" id="L25">    ExameEnum(String nome) {</span>
+
+<span class="fc" id="L27">        this.nome = nome;</span>
+<span class="fc" id="L28">    }</span>
+    private final String nome;
+
+    @Override
+    public String toString() {
+<span class="nc" id="L33">        return nome;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

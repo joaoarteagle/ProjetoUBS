@@ -1,0 +1,164 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > PessoaController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.desafio_profissional.ubs.controllers</a>
+</div>
+
+<h1>Coverage Summary for Class: PessoaController (com.desafio_profissional.ubs.controllers)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PessoaController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    16.7%
+  </span>
+  <span class="absValue">
+    (1/6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    6.7%
+  </span>
+  <span class="absValue">
+    (1/15)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.desafio_profissional.ubs.controllers;
+&nbsp;
+&nbsp;import com.desafio_profissional.ubs.models.domain.Pessoa;
+&nbsp;import com.desafio_profissional.ubs.repositories.PessoaRepository;
+&nbsp;import org.springframework.beans.BeanUtils;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.http.HttpStatus;
+&nbsp;import org.springframework.http.ResponseEntity;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;import java.util.Optional;
+&nbsp;
+&nbsp;@RestController
+&nbsp;@RequestMapping(&quot;/pessoa&quot;)
+<b class="fc">&nbsp;public class PessoaController {</b>
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    PessoaRepository pessoaRepository;
+&nbsp;
+&nbsp;    @PostMapping
+&nbsp;    public ResponseEntity&lt;Pessoa&gt; savePessoa(@RequestBody Pessoa pessoa){
+<b class="nc">&nbsp;        var pessoa0 = new Pessoa();</b>
+<b class="nc">&nbsp;        BeanUtils.copyProperties(pessoa, pessoa0);</b>
+<b class="nc">&nbsp;        return ResponseEntity.status(HttpStatus.OK).body(pessoaRepository.save(pessoa0));</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    @GetMapping
+&nbsp;    public ResponseEntity&lt;List&lt;Pessoa&gt;&gt; getAllPessoa(){
+<b class="nc">&nbsp;        List&lt;Pessoa&gt; pessoaList = pessoaRepository.findAll();</b>
+&nbsp;
+<b class="nc">&nbsp;        return ResponseEntity.status(HttpStatus.OK).body(pessoaList);</b>
+&nbsp;    }
+&nbsp;    @GetMapping(&quot;/{cpf}&quot;)
+&nbsp;    public ResponseEntity&lt;Pessoa&gt; getOnePessoa(@PathVariable Long cpf){
+&nbsp;
+<b class="nc">&nbsp;        Optional&lt;Pessoa&gt; person0 = pessoaRepository.findById(cpf);</b>
+&nbsp;
+<b class="nc">&nbsp;        return ResponseEntity.status(HttpStatus.OK).body(person0.get());</b>
+&nbsp;
+&nbsp;    }
+&nbsp;    @PutMapping(&quot;/{cpf}&quot;)
+&nbsp;    public ResponseEntity&lt;Pessoa&gt; altualizarDados(@PathVariable Long cpf,
+&nbsp;                                                  @RequestBody Pessoa pessoa){
+&nbsp;
+<b class="nc">&nbsp;        Optional&lt;Pessoa&gt; person = pessoaRepository.findById(cpf);</b>
+&nbsp;
+<b class="nc">&nbsp;        var person0 = person.get();</b>
+<b class="nc">&nbsp;        BeanUtils.copyProperties(person, pessoa);</b>
+&nbsp;
+<b class="nc">&nbsp;        return ResponseEntity.status(HttpStatus.OK).body(pessoaRepository.save(person0));</b>
+&nbsp;    }
+&nbsp;    @DeleteMapping(&quot;/{cpf}&quot;)
+&nbsp;    public ResponseEntity&lt;Object&gt; deletarPessoa(@PathVariable Long cpf){
+<b class="nc">&nbsp;        Optional&lt;Pessoa&gt; pessoa = pessoaRepository.findById(cpf);</b>
+<b class="nc">&nbsp;        pessoaRepository.delete(pessoa.get());</b>
+&nbsp;
+<b class="nc">&nbsp;        return ResponseEntity.status(HttpStatus.OK).body(&quot;Cadastro deletado com sucesso&quot;);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-11-16 16:21</div>
+</div>
+</body>
+</html>

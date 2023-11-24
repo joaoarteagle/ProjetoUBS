@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Paciente.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ProjetoDesafioProfissionalIvApplicationTests Coverage Results</a> &gt; <a href="index.source.html" class="el_package">com.desafio_profissional.ubs.models.domain</a> &gt; <span class="el_source">Paciente.java</span></div><h1>Paciente.java</h1><pre class="source lang-java linenums">package com.desafio_profissional.ubs.models.domain;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+import java.util.List;
+
+@Table(name = &quot;TB_PACIENTE&quot;)
+@Entity
+public class Paciente extends Pessoa{
+
+    private Long cpf;
+    private String convenio;
+    private String contatoEmergencia;
+    @OneToMany(mappedBy = &quot;paciente&quot;)
+    private List&lt;Exames&gt; exames;
+    @OneToMany(mappedBy = &quot;paciente&quot;)
+    private List&lt;Consultas&gt; consultas;
+
+    public Paciente(Long cpf,String convenio, String contatoEmergencia) {
+<span class="nc" id="L23">        super();</span>
+<span class="nc" id="L24">        this.convenio = convenio;</span>
+<span class="nc" id="L25">        this.contatoEmergencia = contatoEmergencia;</span>
+<span class="nc" id="L26">    }</span>
+
+    public Paciente() {
+
+<span class="nc" id="L30">        super();</span>
+<span class="nc" id="L31">    }</span>
+
+    @Override
+    public Long getCpf() {
+<span class="nc" id="L35">        return cpf;</span>
+    }
+
+    @Override
+    public void setCpf(Long cpf) {
+<span class="nc" id="L40">        this.cpf = cpf;</span>
+<span class="nc" id="L41">    }</span>
+
+    public String getConvenio() {
+<span class="nc" id="L44">        return convenio;</span>
+    }
+
+    public void setConvenio(String convenio) {
+<span class="nc" id="L48">        this.convenio = convenio;</span>
+<span class="nc" id="L49">    }</span>
+
+    public String getContatoEmergencia() {
+<span class="nc" id="L52">        return contatoEmergencia;</span>
+    }
+
+    public void setContatoEmergencia(String contatoEmergencia) {
+<span class="nc" id="L56">        this.contatoEmergencia = contatoEmergencia;</span>
+<span class="nc" id="L57">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

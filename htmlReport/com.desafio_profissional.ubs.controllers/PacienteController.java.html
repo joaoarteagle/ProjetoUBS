@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PacienteController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ProjetoDesafioProfissionalIvApplicationTests Coverage Results</a> &gt; <a href="index.source.html" class="el_package">com.desafio_profissional.ubs.controllers</a> &gt; <span class="el_source">PacienteController.java</span></div><h1>PacienteController.java</h1><pre class="source lang-java linenums">package com.desafio_profissional.ubs.controllers;
+
+import com.desafio_profissional.ubs.dtos.PacienteDto;
+import com.desafio_profissional.ubs.models.domain.Paciente;
+import com.desafio_profissional.ubs.repositories.PacientesRepository;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping(&quot;/pacientes&quot;)
+<span class="fc" id="L18">public class PacienteController {</span>
+
+    @Autowired
+    PacientesRepository pacientesRepository;
+    @PostMapping
+    public ResponseEntity&lt;Paciente&gt; post(@RequestBody Paciente paciente){
+<span class="nc" id="L24">        var paciente0 = new Paciente();</span>
+<span class="nc" id="L25">        BeanUtils.copyProperties(paciente, paciente0);</span>
+<span class="nc" id="L26">        return ResponseEntity.status(HttpStatus.OK).body(pacientesRepository.save(paciente0));</span>
+    }
+    @GetMapping
+    public ResponseEntity&lt;List&lt;Paciente&gt;&gt; getAll(){
+<span class="nc" id="L30">        return ResponseEntity.status(HttpStatus.OK).body(pacientesRepository.findAll());</span>
+    }
+    @GetMapping(&quot;/{cpf}&quot;)
+    public ResponseEntity&lt;Paciente&gt; getByCpf(@PathVariable long cpf){
+<span class="nc" id="L34">        Optional&lt;Paciente&gt; paciente = pacientesRepository.findById(cpf);</span>
+<span class="nc" id="L35">        var paciente0 = new Paciente();</span>
+<span class="nc" id="L36">        BeanUtils.copyProperties(paciente,paciente0);</span>
+<span class="nc" id="L37">        return ResponseEntity.status(HttpStatus.OK).body(paciente0);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

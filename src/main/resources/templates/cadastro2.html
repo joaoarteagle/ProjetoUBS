@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
             
             <div><h2>Cadastrando Usuário </h2></div>
         <h3>Informações Pessoais</h3>
-        <form class="formulariocadastro">
+        <form class="formulariocadastro" method="post">
             
             <select name="estadoCivil" id="estadoCivil">
                 <option value="" disabled selected>Estado Civil</option>
@@ -37,8 +37,8 @@
             <input type="email" name="email" placeholder="Email">
 
             <div class="buttons">
-                <a href="cadastro1.html">VOLTAR</a>
-                <a href="cadastro3.html">PRÓXIMO</a>
+                <a th:href="@{/pacientes/cadastro1}">VOLTAR</a>
+                <a th:href="@{/pacientes/cadastro3}">PRÓXIMO</a>
             </div>
     </form>
 </fieldset>

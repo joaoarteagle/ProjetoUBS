@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Pessoa.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">ProjetoDesafioProfissionalIvApplicationTests Coverage Results</a> &gt; <a href="index.source.html" class="el_package">com.desafio_profissional.ubs.models.domain</a> &gt; <span class="el_source">Pessoa.java</span></div><h1>Pessoa.java</h1><pre class="source lang-java linenums">package com.desafio_profissional.ubs.models.domain;
+
+import com.desafio_profissional.ubs.models.domain.enums.EstadoCivil;
+import com.desafio_profissional.ubs.models.domain.enums.Estados;
+import com.desafio_profissional.ubs.models.domain.enums.Nascionalidade;
+import com.desafio_profissional.ubs.models.domain.enums.Sexo;
+import jakarta.persistence.*;
+import org.hibernate.validator.constraints.br.CPF;
+import org.springframework.hateoas.RepresentationModel;
+
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.Date;
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Table(name = &quot;TB_PESSOA&quot;)
+public class Pessoa extends RepresentationModel&lt;Pessoa&gt; implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
+
+
+    @Id
+    private Long cpf;
+    private String nomeCompleto;
+    private Date dataNasc;
+    private String registroGeral;
+    private Sexo sexo;
+    private String telefone;
+    private EstadoCivil estadoCivil;
+    private Nascionalidade nascionalidade;
+    private String endereco;
+    private String cep;
+    private Estados estado;
+    private String email;
+
+<span class="nc" id="L36">    public Pessoa() {</span>
+<span class="nc" id="L37">        this.cpf = cpf;</span>
+<span class="nc" id="L38">        this.nomeCompleto = nomeCompleto;</span>
+<span class="nc" id="L39">        this.dataNasc = dataNasc;</span>
+<span class="nc" id="L40">        this.registroGeral = registroGeral;</span>
+<span class="nc" id="L41">        this.sexo = sexo;</span>
+<span class="nc" id="L42">        this.telefone = telefone;</span>
+<span class="nc" id="L43">        this.estadoCivil = estadoCivil;</span>
+<span class="nc" id="L44">        this.nascionalidade = nascionalidade;</span>
+<span class="nc" id="L45">        this.endereco = endereco;</span>
+<span class="nc" id="L46">        this.cep = cep;</span>
+<span class="nc" id="L47">        this.estado = estado;</span>
+<span class="nc" id="L48">        this.email = email;</span>
+<span class="nc" id="L49">    }</span>
+
+    public String getNomeCompleto() {
+<span class="nc" id="L52">        return nomeCompleto;</span>
+    }
+
+    public void setNomeCompleto(String nomeCompleto) {
+<span class="nc" id="L56">        this.nomeCompleto = nomeCompleto;</span>
+<span class="nc" id="L57">    }</span>
+
+    public Date getDataNasc() {
+<span class="nc" id="L60">        return dataNasc;</span>
+    }
+
+    public void setDataNasc(Date dataNasc) {
+<span class="nc" id="L64">        this.dataNasc = dataNasc;</span>
+<span class="nc" id="L65">    }</span>
+
+    public Long getCpf() {
+<span class="nc" id="L68">        return cpf;</span>
+    }
+
+    public void setCpf(Long cpf) {
+<span class="nc" id="L72">        this.cpf = cpf;</span>
+<span class="nc" id="L73">    }</span>
+
+    public String getRegistroGeral() {
+<span class="nc" id="L76">        return registroGeral;</span>
+    }
+
+    public void setRegistroGeral(String registroGeral) {
+<span class="nc" id="L80">        this.registroGeral = registroGeral;</span>
+<span class="nc" id="L81">    }</span>
+
+    public Sexo getSexo() {
+<span class="nc" id="L84">        return sexo;</span>
+    }
+
+    public void setSexo(Sexo sexo) {
+<span class="nc" id="L88">        this.sexo = sexo;</span>
+<span class="nc" id="L89">    }</span>
+
+    public String getTelefone() {
+<span class="nc" id="L92">        return telefone;</span>
+    }
+
+    public void setTelefone(String telefone) {
+<span class="nc" id="L96">        this.telefone = telefone;</span>
+<span class="nc" id="L97">    }</span>
+
+    public EstadoCivil getEstadoCivil() {
+<span class="nc" id="L100">        return estadoCivil;</span>
+    }
+
+    public void setEstadoCivil(EstadoCivil estadoCivil) {
+<span class="nc" id="L104">        this.estadoCivil = estadoCivil;</span>
+<span class="nc" id="L105">    }</span>
+
+    public Nascionalidade getNascionalidade() {
+<span class="nc" id="L108">        return nascionalidade;</span>
+    }
+
+    public void setNascionalidade(Nascionalidade nascionalidade) {
+<span class="nc" id="L112">        this.nascionalidade = nascionalidade;</span>
+<span class="nc" id="L113">    }</span>
+
+    public String getEndereco() {
+<span class="nc" id="L116">        return endereco;</span>
+    }
+
+    public void setEndereco(String endereco) {
+<span class="nc" id="L120">        this.endereco = endereco;</span>
+<span class="nc" id="L121">    }</span>
+
+    public String getCep() {
+<span class="nc" id="L124">        return cep;</span>
+    }
+
+    public void setCep(String cep) {
+<span class="nc" id="L128">        this.cep = cep;</span>
+<span class="nc" id="L129">    }</span>
+
+    public Estados getEstado() {
+<span class="nc" id="L132">        return estado;</span>
+    }
+
+    public void setEstado(Estados estado) {
+<span class="nc" id="L136">        this.estado = estado;</span>
+<span class="nc" id="L137">    }</span>
+
+    public String getEmail() {
+<span class="nc" id="L140">        return email;</span>
+    }
+
+    public void setEmail(String email) {
+<span class="nc" id="L144">        this.email = email;</span>
+<span class="nc" id="L145">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

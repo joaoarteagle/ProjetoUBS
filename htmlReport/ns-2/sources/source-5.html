@@ -1,0 +1,143 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > PacienteController</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.desafio_profissional.ubs.controllers</a>
+</div>
+
+<h1>Coverage Summary for Class: PacienteController (com.desafio_profissional.ubs.controllers)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PacienteController</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    25%
+  </span>
+  <span class="absValue">
+    (1/4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    11.1%
+  </span>
+  <span class="absValue">
+    (1/9)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.desafio_profissional.ubs.controllers;
+&nbsp;
+&nbsp;import com.desafio_profissional.ubs.dtos.PacienteDto;
+&nbsp;import com.desafio_profissional.ubs.models.domain.Paciente;
+&nbsp;import com.desafio_profissional.ubs.repositories.PacientesRepository;
+&nbsp;import org.springframework.beans.BeanUtils;
+&nbsp;import org.springframework.beans.factory.annotation.Autowired;
+&nbsp;import org.springframework.http.HttpStatus;
+&nbsp;import org.springframework.http.HttpStatusCode;
+&nbsp;import org.springframework.http.ResponseEntity;
+&nbsp;import org.springframework.web.bind.annotation.*;
+&nbsp;
+&nbsp;import java.util.List;
+&nbsp;import java.util.Optional;
+&nbsp;
+&nbsp;@RestController
+&nbsp;@RequestMapping(&quot;/pacientes&quot;)
+<b class="fc">&nbsp;public class PacienteController {</b>
+&nbsp;
+&nbsp;    @Autowired
+&nbsp;    PacientesRepository pacientesRepository;
+&nbsp;    @PostMapping
+&nbsp;    public ResponseEntity&lt;Paciente&gt; post(@RequestBody Paciente paciente){
+<b class="nc">&nbsp;        var paciente0 = new Paciente();</b>
+<b class="nc">&nbsp;        BeanUtils.copyProperties(paciente, paciente0);</b>
+<b class="nc">&nbsp;        return ResponseEntity.status(HttpStatus.OK).body(pacientesRepository.save(paciente0));</b>
+&nbsp;    }
+&nbsp;    @GetMapping
+&nbsp;    public ResponseEntity&lt;List&lt;Paciente&gt;&gt; getAll(){
+<b class="nc">&nbsp;        return ResponseEntity.status(HttpStatus.OK).body(pacientesRepository.findAll());</b>
+&nbsp;    }
+&nbsp;    @GetMapping(&quot;/{cpf}&quot;)
+&nbsp;    public ResponseEntity&lt;Paciente&gt; getByCpf(@PathVariable long cpf){
+<b class="nc">&nbsp;        Optional&lt;Paciente&gt; paciente = pacientesRepository.findById(cpf);</b>
+<b class="nc">&nbsp;        var paciente0 = new Paciente();</b>
+<b class="nc">&nbsp;        BeanUtils.copyProperties(paciente,paciente0);</b>
+<b class="nc">&nbsp;        return ResponseEntity.status(HttpStatus.OK).body(paciente0);</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-11-16 16:21</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,269 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > Pessoa</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.desafio_profissional.ubs.models.domain</a>
+</div>
+
+<h1>Coverage Summary for Class: Pessoa (com.desafio_profissional.ubs.models.domain)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Pessoa</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/25)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/37)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Pessoa$HibernateInstantiator$f6tl8Pxc</td>
+  </tr>
+  <tr>
+    <td class="name">Pessoa$HibernateInstantiator$tt3NIhLe</td>
+  </tr>
+  <tr>
+    <td class="name">Pessoa$HibernateProxy$9HR03uqI</td>
+  </tr>
+  <tr>
+    <td class="name">Pessoa$HibernateProxy$zJ9d5lMd</td>
+  </tr>
+<tr>
+  <td class="name"><strong>Total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/25)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/37)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.desafio_profissional.ubs.models.domain;
+&nbsp;
+&nbsp;import com.desafio_profissional.ubs.models.domain.enums.EstadoCivil;
+&nbsp;import com.desafio_profissional.ubs.models.domain.enums.Estados;
+&nbsp;import com.desafio_profissional.ubs.models.domain.enums.Nascionalidade;
+&nbsp;import com.desafio_profissional.ubs.models.domain.enums.Sexo;
+&nbsp;import jakarta.persistence.*;
+&nbsp;import org.hibernate.validator.constraints.br.CPF;
+&nbsp;import org.springframework.hateoas.RepresentationModel;
+&nbsp;
+&nbsp;import java.io.Serial;
+&nbsp;import java.io.Serializable;
+&nbsp;import java.util.Date;
+&nbsp;@Entity
+&nbsp;@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+&nbsp;@Table(name = &quot;TB_PESSOA&quot;)
+&nbsp;public class Pessoa extends RepresentationModel&lt;Pessoa&gt; implements Serializable {
+&nbsp;    @Serial
+&nbsp;    private static final long serialVersionUID = 1L;
+&nbsp;
+&nbsp;
+&nbsp;    @Id
+&nbsp;    private Long cpf;
+&nbsp;    private String nomeCompleto;
+&nbsp;    private Date dataNasc;
+&nbsp;    private String registroGeral;
+&nbsp;    private Sexo sexo;
+&nbsp;    private String telefone;
+&nbsp;    private EstadoCivil estadoCivil;
+&nbsp;    private Nascionalidade nascionalidade;
+&nbsp;    private String endereco;
+&nbsp;    private String cep;
+&nbsp;    private Estados estado;
+&nbsp;    private String email;
+&nbsp;
+<b class="nc">&nbsp;    public Pessoa() {</b>
+<b class="nc">&nbsp;        this.cpf = cpf;</b>
+<b class="nc">&nbsp;        this.nomeCompleto = nomeCompleto;</b>
+<b class="nc">&nbsp;        this.dataNasc = dataNasc;</b>
+<b class="nc">&nbsp;        this.registroGeral = registroGeral;</b>
+<b class="nc">&nbsp;        this.sexo = sexo;</b>
+<b class="nc">&nbsp;        this.telefone = telefone;</b>
+<b class="nc">&nbsp;        this.estadoCivil = estadoCivil;</b>
+<b class="nc">&nbsp;        this.nascionalidade = nascionalidade;</b>
+<b class="nc">&nbsp;        this.endereco = endereco;</b>
+<b class="nc">&nbsp;        this.cep = cep;</b>
+<b class="nc">&nbsp;        this.estado = estado;</b>
+<b class="nc">&nbsp;        this.email = email;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getNomeCompleto() {
+<b class="nc">&nbsp;        return nomeCompleto;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setNomeCompleto(String nomeCompleto) {
+<b class="nc">&nbsp;        this.nomeCompleto = nomeCompleto;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Date getDataNasc() {
+<b class="nc">&nbsp;        return dataNasc;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setDataNasc(Date dataNasc) {
+<b class="nc">&nbsp;        this.dataNasc = dataNasc;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Long getCpf() {
+<b class="nc">&nbsp;        return cpf;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setCpf(Long cpf) {
+<b class="nc">&nbsp;        this.cpf = cpf;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getRegistroGeral() {
+<b class="nc">&nbsp;        return registroGeral;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setRegistroGeral(String registroGeral) {
+<b class="nc">&nbsp;        this.registroGeral = registroGeral;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Sexo getSexo() {
+<b class="nc">&nbsp;        return sexo;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setSexo(Sexo sexo) {
+<b class="nc">&nbsp;        this.sexo = sexo;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getTelefone() {
+<b class="nc">&nbsp;        return telefone;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setTelefone(String telefone) {
+<b class="nc">&nbsp;        this.telefone = telefone;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public EstadoCivil getEstadoCivil() {
+<b class="nc">&nbsp;        return estadoCivil;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setEstadoCivil(EstadoCivil estadoCivil) {
+<b class="nc">&nbsp;        this.estadoCivil = estadoCivil;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Nascionalidade getNascionalidade() {
+<b class="nc">&nbsp;        return nascionalidade;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setNascionalidade(Nascionalidade nascionalidade) {
+<b class="nc">&nbsp;        this.nascionalidade = nascionalidade;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getEndereco() {
+<b class="nc">&nbsp;        return endereco;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setEndereco(String endereco) {
+<b class="nc">&nbsp;        this.endereco = endereco;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getCep() {
+<b class="nc">&nbsp;        return cep;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setCep(String cep) {
+<b class="nc">&nbsp;        this.cep = cep;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public Estados getEstado() {
+<b class="nc">&nbsp;        return estado;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setEstado(Estados estado) {
+<b class="nc">&nbsp;        this.estado = estado;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public String getEmail() {
+<b class="nc">&nbsp;        return email;</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    public void setEmail(String email) {
+<b class="nc">&nbsp;        this.email = email;</b>
+&nbsp;    }
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2023-11-16 16:21</div>
+</div>
+</body>
+</html>
